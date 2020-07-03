@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Article New</h1>
+<!-- 이미지 보낼떄 enctype을 맞춰줘야함 -->
+<form action="" method="POST" enctype="multipart/form-data">
+    <!-- Db에 아무나 들어올수 없게 하기 위해 csrf_token -->
+    {% csrf_token %}
+    <!-- 아래 코드가 전송하는 태그 -->
+    {{ form.as_p }}
+    <input type="submit" value="글쓰기">
+
+</form>
+
+{% endblock %}
