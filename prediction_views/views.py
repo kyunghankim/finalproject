@@ -4,6 +4,14 @@ from .forms import ArticleForm, CommentForm
 
 # Create your views here.
 
+def intro(request):
+    
+    return render(request, 'prediction_views/intro.html')
+
+def notice(request):
+    
+    return render(request, 'prediction_views/notice.html')
+
 def index(request):
     articles = Article.objects.all()
     context = {

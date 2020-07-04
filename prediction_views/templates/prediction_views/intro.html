@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Welcome</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/kyunghankim/">Developer Gitaddress</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://sarotto.tistory.com/">Futher info</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Detail use</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'prediction_views:index' %}">Prediction</a>
+          {% if user.is_authenticated %}
+          <form action="{% url 'accounts:logout' %}" method="POST">
+            {% csrf_token %}
+            <input class="dropdown-item" type="submit" value="Logout">
+        </form>
+          {% else %}
+          <a class="dropdown-item" href="{% url 'accounts:signup' %}">Sign up</a>
+          <a class="dropdown-item" href="{% url 'accounts:login' %}">login</a>
+          {% endif %}
+          
+          <!-- <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#three">three</a> -->
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <h4 id="Trading">Trading</h4>
+    <p>How to trade using this WEB </p>
+    <h4 id="Bilst model">Bilst model</h4>
+    <p>Bilstm: what how</p>
+    <h4 id="Bilst model">Prediction score</h4>
+    <p>Performance</p>
+    <h4 id="Signal & Alerts">Signal & Alerts</h4>
+    <p>service on trading</p>
+    <h4 id="Subscribe">Subscribe & fee</h4>
+    <p>Sign up and start trading using neural-network</p>
+  </div>
+{% endblock %}

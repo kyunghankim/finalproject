@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         body {
-            background-image: url( "{% static 'images/chancery_handwriting.png' %}" );
+            background-image: url( "{% static 'images/chancery_handwriting22.png' %}" );
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: 50% 50%;
+            background-position: left top;
             /* opacity: 0.3!important;  */
             /* object-fit: cover; */
             /* filter:alpha(opacity=30); */
@@ -21,8 +21,21 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Stock Prediction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'prediction_views:intro' %}" tabindex="-1" aria-disabled="true" >Introduction <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{% url 'prediction_views:notice' %}" tabindex="-1" aria-disabled="true" >How to use</a>
+            <a class="nav-item nav-link active" href="{% url 'prediction_views:intro' %}" tabindex="-1" aria-disabled="true" >Accounts</a>
+            <a class="nav-item nav-link active" href="{% url 'prediction_views:intro' %}" tabindex="-1" aria-disabled="true">Prediction</a>
+          </div>
+        </div>
+      </nav>
     {% block body %}
-    
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

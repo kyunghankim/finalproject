@@ -4,6 +4,8 @@
 
 {% block body %}
 <a href="{% url 'prediction_views:new' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New</a>
+
+<button type="button" class="btn btn-outline-primary">Stockcode</button>
 <!-- <a href="{% url 'prediction_views:new' %}">New</a> -->
 <ul>
     {% for article in articles %}
@@ -12,5 +14,15 @@
         </li>
     {% endfor %}
 </ul>
+<body>
+
+    <script langauge="javascript">
+
+         window.open("/prediction/predict/","gotopredict","width=800,height=400");
+
+    </script>
+
+</body>
+
 
 {% endblock %}
