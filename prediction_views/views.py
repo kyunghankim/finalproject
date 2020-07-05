@@ -10,8 +10,11 @@ def predict(request):
 
 
 def intro(request):
-    
-    return render(request, 'prediction_views/intro.html')
+    articles = Article.objects.all()
+    context = {
+        'articles':articles,
+    }
+    return render(request, 'prediction_views/intro.html', context)
 
 def notice(request):
     
