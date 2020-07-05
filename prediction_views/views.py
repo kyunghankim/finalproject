@@ -47,7 +47,7 @@ def detail(request, pk):
     context = {
         'article': article,
         'comment_form': comment_form,
-        'image': image,
+        # 'image': image,
     }
     return render(request, 'prediction_views/detail.html', context)
 
