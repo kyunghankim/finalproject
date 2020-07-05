@@ -4,6 +4,11 @@ from .forms import ArticleForm, CommentForm
 
 # Create your views here.
 
+def predict(request):
+
+    return render(request, 'prediction_views/predict.html')
+
+
 def intro(request):
     
     return render(request, 'prediction_views/intro.html')
@@ -42,6 +47,7 @@ def detail(request, pk):
     context = {
         'article': article,
         'comment_form': comment_form,
+        'image': image,
     }
     return render(request, 'prediction_views/detail.html', context)
 

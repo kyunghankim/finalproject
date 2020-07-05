@@ -14,7 +14,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Detail use</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="{% url 'prediction_views:index' %}">Prediction</a>
+          <a class="dropdown-item" href="{% url 'prediction_views:predict' %}">Prediction</a>
           {% if user.is_authenticated %}
           <form action="{% url 'accounts:logout' %}" method="POST">
             {% csrf_token %}
