@@ -1,6 +1,6 @@
 from django.db import models
 from imagekit.models import ProcessedImageField
-from imagekit.processors import Thumbnail
+from imagekit.processors import Thumbnail, ResizeToFill
 from django.conf import settings
 
 # Create your models here.
@@ -29,3 +29,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
+
